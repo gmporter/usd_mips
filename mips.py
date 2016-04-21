@@ -100,5 +100,5 @@ def static_file(path):
 
 if __name__ == "__main__":
     app.debug = True
-    server = WSGIServer(("0.0.0.0", 5000), app)
+    server = WSGIServer(("0.0.0.0", 80), app)
     server.serve_forever()
