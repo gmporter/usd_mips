@@ -55,14 +55,22 @@ function setMyActiveState(n) {
     } else {
         cur_state = n;
     }
+
     makeAllHidden();
 
-    for (i = 0; i < n; i++) {
-        var newStateContainer = document.getElementById("state" + n)
+    for (i = 0; i <= n; i++) {
+        var newStateContainer = document.getElementById("state" + i)
         if (typeof newStateContainer !== 'undefined' && newStateContainer !== null) {
             newStateContainer.style.display = "initial";
         }
     }
+
+    // don't show the MIPS logo while we're playing the game
+    if (n > 0) {
+        document.getElementById("state0").style.display = "none";
+    }
+
+    window.scrollTo(0,0);
 }
 
 // Make all the content hidden
