@@ -70,6 +70,19 @@ function setMyActiveState(n) {
         document.getElementById("state0").style.display = "none";
     }
 
+    // don't show the demo while we're in the main game
+    if (n > 4) {
+        document.getElementById("state0").style.display = "none";
+        document.getElementById("state1").style.display = "none";
+        document.getElementById("state2").style.display = "none";
+        document.getElementById("state3").style.display = "none";
+        document.getElementById("state4").style.display = "none";
+    }
+
+    if (n == 4) {
+        document.getElementById("state4").style.display = "initial";
+    }
+
     window.scrollTo(0,0);
 }
 
