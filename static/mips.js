@@ -4,6 +4,8 @@ var filename = url.substring(url.lastIndexOf('/')+1);
 var team_num = /\d/.exec(filename);
 console.log("I'm on team " + team_num);
 
+var cur_state = -1
+
 // If we're an admin page, add info to the footer
 if (filename.includes("admin")) {
     var footerElt = document.getElementById("thefooter");
@@ -47,10 +49,19 @@ function handleMIPSEvent(evt) {
 
 // Reveal content related to the current state
 function setMyActiveState(n) {
+    if (cur_state == n) {
+        console.log("ignoring event for another team");
+        return;
+    } else {
+        cur_state = n;
+    }
     makeAllHidden();
-    var newStateContainer = document.getElementById("state" + n)
-    if (typeof newStateContainer !== 'undefined' && newStateContainer !== null) {
-        newStateContainer.style.display = "initial";
+
+    for (i = 0; i < n; i++) {
+        var newStateContainer = document.getElementById("state" + n)
+        if (typeof newStateContainer !== 'undefined' && newStateContainer !== null) {
+            newStateContainer.style.display = "initial";
+        }
     }
 }
 
