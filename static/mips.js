@@ -39,7 +39,7 @@ function handleMIPSEvent(evt) {
     if (filename.includes("admin")) {
         team3State = newState[3];
         btn = document.getElementById("team3btn");
-        if (team3State == 7) {
+        if (team3State == 10) {
             btn.style.background="#32CD32";
         } else {
             btn.style.background=null;

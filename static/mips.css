@@ -24,3 +24,15 @@
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+
+.ui-bar-a {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-style: none;
+}
+
+.ui-bar-b {
+  background-color: #FF0000;
+  color: #000000;
+  border-style: none;
+}
